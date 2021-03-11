@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Compra de vinos</title>
+    <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    
+</head>
+<body>
+    <header class="bar">
+        <h1 class="titulo">Tienda de vinos</h1>
+        <a href="#"><img class="carrito" src="assets/img/img9.jpg" alt="" width="40"></a>
+    </header>
+ 
+        <h2 class="subtitulo">Seleccioná tus productos</h2>
+
+        <div class="contenedor">
+            <div class="producto">
+                <img src="assets/img/img1.jpg" alt="" width="150">
+                <button type="button" id="agregarProducto1">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="assets/img/img2.jpg" alt="" width="150">
+                <button type="button" id="agregarProducto2">Agregar al carrito</button>
+            </div>
+            <div class="producto">                
+                <img src="assets/img/img3.jpg" alt="" width="150">
+                <button type="button" id="agregarProducto3">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="assets/img/img4.jpg" alt="" width="150">
+                <button type="button" id="agregarProducto4">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="assets/img/img5.jpg" alt="" width="150">
+                <button type="button" id="agregarProducto5">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <h2 class="subtitulo">Seleccioná como lo querés llevar</h2>
+
+        <div class="contenedor">
+                <div class="presentacion">
+                    <a href="#"><img src="assets/img/img6.jpg" alt="" width="200"></a>
+                </div>
+                <div class="presentacion">
+                    <a href="#"><img src="assets/img/img7.jpg" alt="" width="200"></a>
+                </div>
+                <div class="presentacion">
+                    <a href="#"><img src="assets/img/img8.jpg" alt="" width="200" height="200"></a>
+                </div>
+        </div>
+
+        <h2 class="subtitulo">Total de la compra</h2>
+
+        <div class="contenedor_lista">
+           <h3 class="subtitulo">Productos en el carrito</h3>
+           <ol id="lista">
+              
+           </ol>
+           <h3 class="subtitulo">Presentación</h3>
+           <ul id="lista2">
+              
+           </ul>
+           <table class="total" id="total">
+               <th>Total</th>
+               <td id="totalPrecio">$1000</td>
+           </table>
+              <button class="finalizar_compra" type="button" id="finalizarCompra">Finalizar Compra</button>
+              <h2 class="subtitulo">Medios de pago</h2>
+              <div class="medios"> 
+                <img src="assets/img/img10.png" alt="mediosdepago" width="400">
+              </div>
+        </div>
+        <footer>
+            <div class="footer">
+                <p>Tienda de vinos &#169</p>
+                <a href="#"><img src="assets/img/wat.png" alt="Whatsapp" width="30"></a>
+                <a href="#"><img src="assets/img/inst.png" alt="Instagram" width="30"></a>
+            </div>
+        </footer>
+    <script defer src="js/miScript.js"></script>
+</body>
+</html>
