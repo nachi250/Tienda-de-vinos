@@ -92,10 +92,10 @@ button:hover {
 }
 
 /* ELIMINAR PRODUCTO*/
-ol li a:hover {
+ol li p:hover {
     text-decoration: line-through;
-    font-weight: bold;
     color: red;
+    cursor: pointer;
 }
 
 /* ELEGIR PACKAGING*/
@@ -118,10 +118,10 @@ ol li a:hover {
 	transform: scale(1.2);
     transition-duration: 500ms;   
 }
-ul li a:hover {
+ul li p:hover {
     text-decoration: line-through;
-    font-weight: bold;
     color: red;
+    cursor: pointer;
 }
 
 /* LISTA DE TOTAL DE PRODUCTOS */
