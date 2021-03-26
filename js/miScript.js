@@ -1,10 +1,9 @@
-
 let cargoProductos = () => { //función con la cual cargamos el array JSON de cursos, en la tabla principal
     contenedorProductos.innerHTML = ""
     for (let producto of misProductos) {
         let div = `
                     <div class="producto">
-                        <img src="${producto.img}" alt="funciono" width="150">
+                        <img src="${producto.img}" alt="Imagen de vino" width="150">
                         <button type="button" onclick="agregoProductoAlCarrito(${producto.productoId})">Agregar al carrito</button>
                     </div>
                     `
@@ -18,6 +17,7 @@ let cargoProductos = () => { //función con la cual cargamos el array JSON de cu
             //o recargar el documento HTML.
 }
 cargoProductos()
+
 
 let agregoProductoAlCarrito = (id) => {
     let r = misProductos.find(p => p.productoId == id)
@@ -96,13 +96,14 @@ for (let i = 0; i < btn.length; i++) {
         btnClickeado.parentElement.parentElement.remove()
     })
     function eliminarProductoDelCarrito(id) {
-        let r = carrito.findIndex(p => p.productoid == id)
+        let r = carrito.findIndex(p => p.productoId === id)
         carrito.splice(r, 1)
         actualizoCarrito()
         guardoCarrito()
         precioTotal.innerText = ("$ "+calculoTotal())
     }
 }
+
 
 
 
