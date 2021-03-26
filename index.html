@@ -14,11 +14,11 @@
 <body>
     <header class="bar">
         <h1 class="titulo">Tienda de vinos</h1>
-        <a href="#contenedorCarrito"><img class="carrito" src="assets/img/img9.jpg" alt="" width="40"></a>
+        <a href="#contenedorCarrito" class="d-flex align-items-center"><img class="carrito" src="assets/img/img9.jpg" alt="" width="40"></a>
     </header>
         <h2 class="subtitulo">Seleccioná tus productos</h2>
         <div>
-            <span id="productosEnCarrito">PRODUCTOS EN EL CARRITO: 0</span>
+            <span id="productosEnCarrito" class="leyenda-productos-carrito">PRODUCTOS EN EL CARRITO: 0</span>
         </div>
         <div class="contenedor" id="contenedorProductos">
             <div class="producto">
@@ -52,24 +52,24 @@
               <tr>
                 <th scope="col">PRODUCTO</th>
                 <th scope="col">PRECIO</th>
-                <th scope="col">CANTIDAD</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody class="tabla_carrito" id="tablaCarrito">
                 <tr>
-                    <td>Pispi Blend</td>
-                    <td>$ 780</td>
-                    <td><input class="cart-quantity-input" type="number" value="1"><button type="button" class="btn btn-danger">Quitar</button></td>
+                    <td class="align-middle producto-name">Pispi Blend</td>
+                    <td class="align-middle precio-del-producto">$ 780</td>
+                    <td><button type="button" class="btn btn-danger align-middle">Quitar</button></td>
                 </tr>
                 <tr>
-                    <td>Luigi Bosca Malbec</td>
-                    <td>$ 620</td>
-                    <td><input class="cart-quantity-input" type="number" value="1"><button type="button" class="btn btn-danger">Quitar</button></td>
+                    <td class="align-middle producto-name">Luigi Bosca Malbec</td>
+                    <td class="align-middle precio-del-producto">$ 620</td>
+                    <td class="align-middle"><button type="button" class="btn btn-danger">Quitar</button></td>
                 </tr>
                 <tr>
-                    <td>Terrazas Gran Reserva</td>
-                    <td>$ 500</td>
-                    <td><input class="cart-quantity-input" type="number" value="1"><button type="button" class="btn btn-danger">Quitar</button></td>
+                    <td class="align-middle producto-name">Terrazas Gran Reserva</td>
+                    <td class="align-middle precio-del-producto">$ 500</td>
+                    <td class="align-middle"><button type="button" class="btn btn-danger">Quitar</button></td>
                 </tr>
             </tbody>
           </table>

@@ -54,10 +54,9 @@ let armoListaCarrito = () => { //Cargo productos a la lista de productos
          for (let producto of carrito) {
                 productosEnCarrito = `
                 <tr>
-                    <td>${producto.nombre}</td>
-                    <td>$ ${producto.precio}</td>
-                    <td><input class="cart-quantity-input" type="number" value="1">
-                        <button type="button" class="btn btn-danger" id="btnQuitarProducto">Quitar</button></td>
+                    <td class="align-middle producto-name">${producto.nombre}</td>
+                    <td class="align-middle">$ ${producto.precio}</td>
+                    <td class="align-middle"><button type="button" class="btn btn-danger" onclick="eliminarProductoDelCarrito(${producto.productoId})">Quitar</button></td>
                 </tr>
              `
                 tablaCarrito.innerHTML += productosEnCarrito
@@ -66,7 +65,7 @@ let armoListaCarrito = () => { //Cargo productos a la lista de productos
                     let boton = btn[i];
                     boton.addEventListener("click", function (event) {
                         let btnClickeado = event.target
-                        btnClickeado.parentElement.parentElement.remove()
+                        btnClickeado.parentElement.parentElement.remove()                  
                     })
                     
                 }
@@ -96,8 +95,16 @@ for (let i = 0; i < btn.length; i++) {
         let btnClickeado = event.target
         btnClickeado.parentElement.parentElement.remove()
     })
-    
+    function eliminarProductoDelCarrito(id) {
+        let r = carrito.findIndex(p => p.productoid == id)
+        carrito.splice(r, 1)
+        actualizoCarrito()
+        guardoCarrito()
+        precioTotal.innerText = ("$ "+calculoTotal())
+    }
 }
+
+
 
 
 
