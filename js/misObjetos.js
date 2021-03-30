@@ -1,10 +1,12 @@
 // FUNCION CONSTRUCTORA: PRODUCTOS
 
-function Producto(productoId, nombre, img, precio) {
-    this.productoId = productoId;
-    this.nombre = nombre;
-    this.img = img;
-    this.precio = precio;
+class Producto {
+    constructor(productoId, nombre, img, precio) {
+        this.productoId = productoId;
+        this.nombre = nombre;
+        this.img = img;
+        this.precio = precio;
+    }
 }
 
 let producto1 = new Producto(1, 'Pispi Blend', './assets/img/img1.jpg', 780);
