@@ -60,7 +60,12 @@ header img:hover {
 .producto {
     display: flex;
     flex-direction: column;
-    margin: 15px;
+    margin: 30px;
+    align-items: center;
+}
+.producto-nombre, .producto-precio {
+    color: #f2f2f2;
+    font-weight: bold;
 }
 .producto img {
     border-radius: 50%;
@@ -91,7 +96,7 @@ header img:hover {
      color: #333;
      font-weight: bold;
 }
- .tabla_carrito{
+ .tabla-carrito{
      margin: auto;
      width: auto;
  }
@@ -103,10 +108,13 @@ header img:hover {
      margin: 10px;
      padding: 0;
  }
- .carrito-input{
+ .item-cantidad-input{
      display: inline;
      width: 40px;
      overflow: visible;
+ }
+ .item-carrito-nombre {
+     display: inline;
  }
 .total {
     padding-right: 10px;
@@ -157,9 +165,7 @@ header img:hover {
 .footer img:hover {
     transform: scale(1.2, 1.2)
 }
-.display-none {
-    display: none;
-}
+
 
 
 

@@ -18,28 +18,28 @@
     </header>
         <h2 class="subtitulo">Seleccioná tus productos</h2>
         <div>
-            <span id="productosEnCarrito" class="leyenda-productos-carrito">PRODUCTOS EN EL CARRITO: 0</span>
+            <span id="leyendaProductosCarrito" class="leyenda-productos-carrito">PRODUCTOS EN EL CARRITO: 0</span>
         </div>
         <div class="contenedor" id="contenedorProductos">
             <div class="producto">
                 <img src="assets/img/img1.jpg" alt="" width="150">
-                <button type="button" id="">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary">+Add $ 000.00</button>
             </div>
             <div class="producto">
                 <img src="assets/img/img2.jpg" alt="" width="150">
-                <button type="button" id="">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary">+Add $ 000.00</button>
             </div>
             <div class="producto">                
                 <img src="assets/img/img3.jpg" alt="" width="150">
-                <button type="button" id="">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary">+Add $ 000.00</button>
             </div>
             <div class="producto">
                 <img src="assets/img/img4.jpg" alt="" width="150">
-                <button type="button" id="">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary">+Add $ 000.00</button>
             </div>
             <div class="producto">
                 <img src="assets/img/img5.jpg" alt="" width="150">
-                <button type="button" id="">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary">+Add $ 000.00</button>
             </div>
         </div>
 
@@ -52,30 +52,27 @@
               <tr>
                 <th scope="col" class="producto-name">PRODUCTO</th>
                 <th scope="col">PRECIO</th>
-                <th scope="col"></th>
+                <th scope="col"> CANTIDAD</th>
               </tr>
             </thead>
-            <tbody class="tabla_carrito" id="tablaCarrito">
-                <tr class="display-none">
-                    <td class="align-middle producto-name">Pispi Blend</td>
-                    <td class="align-middle">$ 780</td>
-                    <td><button type="button" class="btn btn-danger align-middle">Quitar</button></td>
+            <tbody class="tabla-carrito" id="tablaCarrito">
+             <!--<tr class="item-carrito">
+                    <td class="align-middle"><img class="" src="./assets/img/img1.jpg" alt="" width="50"><p class="item-carrito-nombre">Pispi Blend</p>
+                    </p></td>
+                    <td class="align-middle item-carrito-precio">$ 780,00</td>
+                    <td class="align-middle"><input class="cart-quantity-input item-cantidad-input" type="number" value="1"><button type="button" class="btn btn-danger">Quitar</button></td>
                 </tr>
-                <tr class="display-none">
-                    <td class="align-middle producto-name">Luigi Bosca Malbec</td>
-                    <td class="align-middle">$ 620</td>
-                    <td class="align-middle"><button type="button" class="btn btn-danger">Quitar</button></td>
-                </tr>
-                <tr class="display-none">
-                    <td class="align-middle producto-name">Terrazas Gran Reserva</td>
-                    <td class="align-middle">$ 500</td>
-                    <td class="align-middle"><button type="button" class="btn btn-danger">Quitar</button></td>
-                </tr>
+                <tr class="item-carrito">
+                    <td class="align-middle"><img class="" src="./assets/img/img2.jpg" alt="" width="50"><p class="item-carrito-nombre">Luigi Bosca Malbec</p>
+                    </p></td>
+                    <td class="align-middle item-carrito-precio">$ 620,00</td>
+                    <td class="align-middle"><input class="cart-quantity-input item-cantidad-input" type="number" value="1"><button type="button" class="btn btn-danger">Quitar</button></td>
+                </tr>-->
             </tbody>
           </table>
            <table class="tabla_total" id="tablaTotal">
                <th class="total">Total</th>
-               <td id="precioTotal">$ 0,00</td>
+               <td class="carrito-total">$ 0,00</td>
            </table>
               <button class="btn_finalizar_compra btn btn-info" type="button" id="btnFinalizarCompra" onclick="finalizarCompra()">Finalizar Compra</button>
               <h2 class="subtitulo">Medios de pago</h2>
@@ -90,6 +87,5 @@
                 <a href="#"><img src="assets/img/inst.png" alt="Instagram" width="30"></a>
             </div>
         </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
 </html>
