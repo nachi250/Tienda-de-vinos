@@ -1,4 +1,4 @@
-//Cargamos los productos en el sitio.
+// CARGAR PRODUCTOS A LA LISTA DE PRODUCTOS
 let cargoProductos = () => { 
     contenedorProductos.innerHTML = ''
     for (let producto of misProductos) {
@@ -7,7 +7,7 @@ let cargoProductos = () => {
                         <img class="img-producto" src="${producto.img}" alt="Imagen de vino" width="150">
                         <p class="producto-nombre">${producto.nombre}</p>
                         <p class="producto-precio">$ ${producto.precio},00</p>
-                        <button type="button" class="btn btn-primary">+ Add $ ${producto.precio}</button>
+                        <button type="button" class="btn btn-primary">Añadir</button>
                     </div>
                     `
                     contenedorProductos.innerHTML += div
@@ -16,26 +16,27 @@ let cargoProductos = () => {
         }
 cargoProductos()
 
-
+// EJECUTAR EL CODIGO SI EL SITIO ESTA CARGADO: EJECUTA READY()
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     ready()
 }
-
+// READY(): CONTIENE LAS VARIABLES DE:
+// LOS BOTONES PARA ELIMINAR PRODUCTOS DEL LA LISTA DEL CARRITO
 function ready() {
     let botonEliminarProductoDelCarrito = document.getElementsByClassName('btn-danger');
     for (let i = 0; i < botonEliminarProductoDelCarrito.length; i++) {
         const boton = botonEliminarProductoDelCarrito[i];
         boton.addEventListener('click', eliminarProductoDelCarrito)   
     }
-
+// ESCUCHA SI HAY CAMBIOS EN LOS INPUT DE CANTIDAD
     let itemCantidadInput = document.getElementsByClassName('item-cantidad-input')
     for (let i = 0; i < itemCantidadInput.length; i++) {
     let cantidad = itemCantidadInput[i];
     cantidad.addEventListener('change', cantidadDeProductos)   
     }
-
+// AGREGA LOS PRODUCTOS A LA LISTA DEL CARRITO
     let botonAñadirProductoAlCarrito = document.getElementsByClassName('btn-primary')
     for (let i = 0; i < botonAñadirProductoAlCarrito.length; i++) {
         boton = botonAñadirProductoAlCarrito[i];
@@ -43,22 +44,23 @@ function ready() {
     }
 }
 
+// LAS VARIABLES EN READY() LLAMAN LAS SIGUIENTES FUNCIONES
+// ELIMINAR PRODUCTOS DE LA LISTA DEL CARRITO
 function eliminarProductoDelCarrito(event) {
     let botonCliqueado = event.target
             botonCliqueado.parentElement.parentElement.remove()
-            actualizarTotalDelCarrito()
+            actualizarTotalDelCarrito() // ACTUALIZA EL TOTAL DE LA COMPRA $$
 }
-
-
+// MANTIENE EL INPUT DE CANTIDAD EN 1 ó > 1
 function cantidadDeProductos(event) {
     let input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
-    actualizarTotalDelCarrito()
+    actualizarTotalDelCarrito() // ACTUALIZA EL TOTAL DE LA COMPRA $$
 }
 
-// Agregar Productos al carrito de compras
+// GENERA LA FUNCION CON LOS PARAMETROS NECESARIOS PARA CREAR LOS ITEM DEL CARRITO
 function añadirProductoSeleccionado(event) {
    let boton = event.target
    let itemProducto = boton.parentElement
@@ -70,6 +72,7 @@ function añadirProductoSeleccionado(event) {
    actualizarTotalDelCarrito()
 }
 
+// CREA EL HTML QUE CONTIENE EL PRODUCTO ELEGIDO Y VERIFICA SI YA SE AÑADIO PREVIAMENTE
 function cargarProductoAlCarrito(nombre, precio, img) {
     let fila = document.createElement('tr')
     fila.classList.add('item-carrito')
@@ -92,13 +95,13 @@ function cargarProductoAlCarrito(nombre, precio, img) {
     fila.getElementsByClassName('item-cantidad-input')[0].addEventListener('change', cantidadDeProductos)
 }
 
-//Actualizar el precio y y cantidad de productos     
+// ACTUALIZA EL TOTAL DE LA COMPRA $$     
 function actualizarTotalDelCarrito() {
     let tablaCarrito = document.getElementsByClassName('tabla-carrito')[0]
     let itemsCarrito = document.getElementsByClassName('item-carrito')
     let c = document.getElementById('leyendaProductosCarrito')
-    let total = 0
-    let y = 0
+    let total = 0 // TOTAL $$
+    let y = 0 // LEYENDA "PRODUCTOS EN EL CARRITO"
     for (let i = 0; i < itemsCarrito.length; i++) {
          let itemCarrito = itemsCarrito[i];
          let itemCarritoPrecio = itemCarrito.getElementsByClassName('item-carrito-precio')[0]
@@ -110,14 +113,14 @@ function actualizarTotalDelCarrito() {
          y = y += n
          console.log(y)
     }
-    document.getElementsByClassName('carrito-total')[0].innerText = '$ '+total+',00'
-    c.innerHTML = 'PRODUCTOS EN EL CARRITO: '+y
+    document.getElementsByClassName('carrito-total')[0].innerText = '$ '+total+',00' // MUESTRA EL TOTAL $$
+    c.innerHTML = 'PRODUCTOS EN EL CARRITO: '+y // MUESTRA "PRODUCTOS EN EL CARRITO"
 }
 
+// FINALIZA LA COMPRA SE RECARGA LA PAGINA
 function finalizarCompra() {
-
-    alert("Muchas gracias por su compra!") //Agradezco la compra realizada
-    setTimeout(() => { //Espero dos y medio segundos, 👇 luego...
+    alert("Muchas gracias por su compra!") 
+    setTimeout(() => {
         document.location.reload()
     }, 2500);
 }

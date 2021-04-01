@@ -1,6 +1,4 @@
-// VARIABLES LISTAS DE PRODUCTOS
-
-let carrito = [] //mi carrito de compras
+let carrito = [] // Array carrito
 let producto = ""
 
 

@@ -46,7 +46,6 @@ header img:hover {
     padding: 10px;
     width: 100%;
 }
-
 .subtitulo {
     color: #333;
     text-align: center;
@@ -65,7 +64,6 @@ header img:hover {
 }
 .producto-nombre, .producto-precio {
     color: #f2f2f2;
-    font-weight: bold;
 }
 .producto img {
     border-radius: 50%;
@@ -81,8 +79,6 @@ header img:hover {
     transition-duration: 500ms;   
 }
 
-/* BOTONES PARA AGREGAR PRODUCTOS */
-
 /* LISTA DE TOTAL DE PRODUCTOS */
 .contenedor_carrito {
     display: flex;
@@ -91,17 +87,12 @@ header img:hover {
     max-width: 700px;
     margin: auto;
 }
- .contenedor_carrito a {
-     text-decoration: none;
-     color: #333;
-     font-weight: bold;
-}
  .tabla-carrito{
      margin: auto;
      width: auto;
  }
 .producto-name {
-    width: 400px;
+    width: 350px;
 }
  .btn-danger {
      min-width: 60px;
@@ -111,7 +102,6 @@ header img:hover {
  .item-cantidad-input{
      display: inline;
      width: 40px;
-     overflow: visible;
  }
  .item-carrito-nombre {
      display: inline;
@@ -121,7 +111,7 @@ header img:hover {
 }
  
  /* FINALIZAR COMPRA*/
-.btn_finalizar_compra {
+.btn-finalizar-compra {
     width: 100px;
     max-width: 400px;
     height: 50px;
