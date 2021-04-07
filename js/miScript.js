@@ -4,7 +4,7 @@ let cargoProductos = () => {
     for (let producto of misProductos) {
         let div = `
                     <div class="producto">
-                        <img class="img-producto" src="${producto.img}" alt="Imagen de vino" width="150">
+                        <img class="producto-img" src="${producto.img}" alt="Imagen de vino" width="150">
                         <p class="producto-nombre">${producto.nombre}</p>
                         <p class="producto-precio">$ ${producto.precio},00</p>
                         <button type="button" class="btn btn-primary">Añadir</button>
@@ -66,7 +66,7 @@ function añadirProductoSeleccionado(event) {
    let itemProducto = boton.parentElement
    let nombre = itemProducto.getElementsByClassName('producto-nombre')[0].innerText
    let precio = itemProducto.getElementsByClassName('producto-precio')[0].innerText
-   let img = itemProducto.getElementsByClassName('img-producto')[0].src
+   let img = itemProducto.getElementsByClassName('producto-img')[0].src
    console.log(nombre, precio, img)
    cargarProductoAlCarrito(nombre, precio, img)
    actualizarTotalDelCarrito()
@@ -91,6 +91,7 @@ function cargarProductoAlCarrito(nombre, precio, img) {
         `
         fila.innerHTML = itemFila
     tablaCarrito.append(fila)
+    // ASIGNA A LOS NUEVOS ELEMENTOS CREADOS, LOS EVENTOS
     fila.getElementsByClassName('btn-danger')[0].addEventListener('click', eliminarProductoDelCarrito)
     fila.getElementsByClassName('item-cantidad-input')[0].addEventListener('change', cantidadDeProductos)
 }
@@ -101,7 +102,7 @@ function actualizarTotalDelCarrito() {
     let itemsCarrito = document.getElementsByClassName('item-carrito')
     let c = document.getElementById('leyendaProductosCarrito')
     let total = 0 // TOTAL $$
-    let y = 0 // LEYENDA "PRODUCTOS EN EL CARRITO"
+    let y = 0 // NOTIFICACIÓN DE CANTIDAD DE PRODUCTOS EN EL CARRITO
     for (let i = 0; i < itemsCarrito.length; i++) {
          let itemCarrito = itemsCarrito[i];
          let itemCarritoPrecio = itemCarrito.getElementsByClassName('item-carrito-precio')[0]
@@ -114,7 +115,13 @@ function actualizarTotalDelCarrito() {
          console.log(y)
     }
     document.getElementsByClassName('carrito-total')[0].innerText = '$ '+total+',00' // MUESTRA EL TOTAL $$
-    c.innerHTML = 'PRODUCTOS EN EL CARRITO: '+y // MUESTRA "PRODUCTOS EN EL CARRITO"
+    c.innerHTML = y // NOTIFICACIÓN CANTIDAD DE PRODUCTOS EN EL CARRITO
+    let position = document.getElementById('position')
+    if (y > 0) {
+        position.classList.add('position')   
+        } else {
+            position.classList.remove ('position')
+        }
 }
 
 // FINALIZA LA COMPRA SE RECARGA LA PAGINA
@@ -122,8 +129,11 @@ function finalizarCompra() {
     alert("Muchas gracias por su compra!") 
     setTimeout(() => {
         document.location.reload()
-    }, 2500);
+    }, 1000);
 }
+
+
+ 
 
 
 
