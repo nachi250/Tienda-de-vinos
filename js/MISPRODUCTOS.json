@@ -1,0 +1,15 @@
+[
+{"productoId": 1, "nombre": "Pispi Blend", "img": "./assets/img/img1.jpg", "precio": 780},
+{"productoId": 2, "nombre": "Luigi Bosca Malbec", "img": "./assets/img/img2.jpg", "precio": 620},
+{"productoId": 3, "nombre": "Rutini Cabernet Sauvignon", "img": "./assets/img/img3.jpg", "precio": 500},
+{"productoId": 4, "nombre": "Terrazas Gran Reserva", "img": "./assets/img/img4.jpg", "precio": 500},
+{"productoId": 5, "nombre": "La Linda Malbec 2018", "img": "./assets/img/img5.jpg", "precio": 450},
+{"productoId": 6, "nombre": "Mosquita Muerta", "img": "./assets/img/img12.jpg", "precio": 750},
+{"productoId": 7, "nombre": "Andeluna Malbec", "img": "./assets/img/img13.jpg", "precio": 1100},
+{"productoId": 8, "nombre": "Los Intocables Blend", "img": "./assets/img/img14.jpg", "precio": 910},
+{"productoId": 9, "nombre": "Los Intocables Malbec", "img": "./assets/img/img15.jpg", "precio": 910},
+{"productoId": 10, "nombre": "Los intocables Blanco", "img": "./assets/img/img16.jpg", "precio": 870},
+{"productoId": 11, "nombre": "Trapiche Medalla", "img": "./assets/img/img17.jpg", "precio": 700},
+{"productoId": 12, "nombre": "Cono Sur 18", "img": "./assets/img/img18.jpg", "precio": 1050},
+{"productoId": 13, "nombre": "Pediel Malbec", "img": "./assets/img/img19.jpg", "precio": 680}
+]
