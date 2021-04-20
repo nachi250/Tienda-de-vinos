@@ -1,28 +1,30 @@
-// CARGAR PRODUCTOS A LA LISTA DE PRODUCTOS
-let cargoProductos = () => { 
-    $('#contenedorProductos').html('')
-    for (let producto of misProductos) {
-        let div = `
-                    <div class="producto">
-                        <img class="producto-img" src="${producto.img}" alt="Imagen de vino" width="150">
-                        <p class="producto-nombre">${producto.nombre}</p>
-                        <p class="producto-precio">$ ${producto.precio},00</p>
-                        <p class="producto-id">${producto.productoId}</p>
-                        <button type="button" class="btn btn-primary" onclick="añadiraLS(${producto.productoId})">Añadir</button>
-                    </div>
-                    `
-                    $('#contenedorProductos').append(div)
-                }
-               // producto = new Producto(carrito)
-        }
-cargoProductos()
+//CARGAR PRODUCTOS A LA LISTA DE PRODUCTOS
+$.getJSON("js/misProductos.json", (response, status) => {
+    if (status === "success") {
+        misProductos = response
+        for (let producto of misProductos) {
+            let div = `
+                        <div class="producto">
+                            <img class="producto-img" src="${producto.img}" alt="Imagen de vino" width="150">
+                            <p class="producto-nombre">${producto.nombre}</p>
+                            <p class="producto-precio">$ ${producto.precio}</p>
+                            <p class="producto-id">${producto.productoId}</p>
+                            <button type="button" class="btn btn-primary" onclick="añadiraLS(${producto.productoId})">Añadir</button>
+                        </div>
+                        `
+                        $('#contenedorProductos').append(div)
 
-// EJECUTAR EL CODIGO SI EL SITIO ESTA CARGADO: EJECUTA READY()
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
+                // EJECUTAR EL CODIGO SI EL SITIO ESTA CARGADO: EJECUTA READY()
+                if (document.readyState == 'loading') {
+                    document.addEventListener('DOMContentLoaded', ready)
+                } else {
+                    ready()
+                }
+            }       
+        }
+    }
+)
+
 // READY(): CONTIENE LAS VARIABLES DE:
 // LOS BOTONES PARA ELIMINAR PRODUCTOS DEL LA LISTA DEL CARRITO
 function ready() {
@@ -43,7 +45,7 @@ function ready() {
         boton = botonAñadirProductoAlCarrito[i];
         boton.addEventListener('click', añadirProductoSeleccionado)
     }
-}
+} // ACA TERMINA READY()
 
 // LAS VARIABLES EN READY() LLAMAN LAS SIGUIENTES FUNCIONES
 // ELIMINAR PRODUCTOS DE LA LISTA DEL CARRITO
@@ -150,6 +152,15 @@ function eliminarLS(id) {
     carrito.splice(p, 1)
     console.warn('¡Se eliminó el producto seleccionado!')
 }
+
+$('.btn-secondary').click( function(e) { 
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#contenedorProductos").offset().top  
+    }, 500);
+} );
+
 
  
 
