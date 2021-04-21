@@ -12,5 +12,6 @@
 {"productoId": 11, "nombre": "Trapiche Medalla", "img": "./assets/img/img17.jpg", "precio": 700},
 {"productoId": 12, "nombre": "Cono Sur 18", "img": "./assets/img/img18.jpg", "precio": 1050},
 {"productoId": 13, "nombre": "Pediel Malbec", "img": "./assets/img/img19.jpg", "precio": 680},
-{"productoId": 14, "nombre": "Pispi Malbec", "img": "./assets/img/img6.jpg", "precio": 750}
+{"productoId": 14, "nombre": "Pispi Malbec", "img": "./assets/img/img6.jpg", "precio": 750},
+{"productoId": 15, "nombre": "Zucardi Malbec", "img": "./assets/img/img20.jpg", "precio": 500}
 ]
