@@ -9,7 +9,7 @@ $.getJSON("js/misProductos.json", (response, status) => {
                             <p class="producto-nombre">${producto.nombre}</p>
                             <p class="producto-precio">$ ${producto.precio}</p>
                             <p class="producto-id">${producto.productoId}</p>
-                            <button type="button" class="btn btn-primary" onclick="añadiraLS(${producto.productoId})">Añadir</button>
+                            <button type="button" class="btn btn-primary">Añadir</button>
                         </div>
                         `
                         $('#contenedorProductos').append(div)
@@ -21,6 +21,9 @@ $.getJSON("js/misProductos.json", (response, status) => {
                     ready()
                 }
             }       
+        } else {
+            let error = `<div><h1>Error</h1></div>`
+            $('#contenedorProductos').append(error)
         }
     }
 )
@@ -99,6 +102,11 @@ function cargarProductoAlCarrito(nombre, precio, img, id) {
     // ASIGNA A LOS NUEVOS ELEMENTOS CREADOS, LOS EVENTOS
     fila.getElementsByClassName('btn-danger')[0].addEventListener('click', eliminarProductoDelCarrito)
     fila.getElementsByClassName('item-cantidad-input')[0].addEventListener('change', cantidadDeProductos)
+    // AÑADE EL PRODUCTO SELECCIONADO DEL CARRITO[] AL LOCALSTORAGE
+    let r = misProductos.find(p => p.productoId == id)
+        carrito.push(r)
+        console.log(r)
+        guardoCarrito()
 }
 
 // ACTUALIZA EL TOTAL DE LA COMPRA $$     
@@ -129,30 +137,30 @@ function actualizarTotalDelCarrito() {
         }
 }
 
+// CREO AL ARRAY CARRITO PARA LUEGO GUARDARLO EN LOCALSTORAGE
+let carrito = []
+// GUARDO EL CARRITO EN LOCALSTORAGE
+const guardoCarrito = () => { 
+        localStorage.carrito = JSON.stringify(carrito)
+}
+// BORRO LOS PRODUCTOS DEL ARRAY CARRITO [] Y LUEGO ACTUALIZO EL LOCAL STORAGE
+function eliminarLS(id) { 
+    let p = carrito.findIndex(p => p.productoId == id)
+    carrito.splice(p, 1)
+    console.warn('¡Se eliminó '+p)
+    guardoCarrito()
+}
+
 // FINALIZA LA COMPRA SE RECARGA LA PAGINA
 function finalizarCompra() {
     alert("Muchas gracias por su compra!") 
     setTimeout(() => {
         document.location.reload()
         carrito = []
+        guardoCarrito()
     }, 1000);
 }
-
-// CARRITO EN LOCALSTORAGE
-// AÑADIR AL ARRAY CARRITO De LS
-let carrito = []
-let añadiraLS = (id) => {
-    let r = misProductos.find(p => p.productoId == id)
-        carrito.push(r)
-        console.log(r)
-}
-// BORRO LOS PRODUCTOS DEL ARRAY CARRITO []
-function eliminarLS(id) { 
-    let p = carrito.findIndex(p => p.id === id)
-    carrito.splice(p, 1)
-    console.warn('¡Se eliminó el producto seleccionado!')
-}
-
+// BOTON SEGUIR COMPRANDO => ANIMADO
 $('.btn-secondary').click( function(e) { 
     e.preventDefault();
     //Animamos sus propiedades CSS con animate
@@ -160,6 +168,7 @@ $('.btn-secondary').click( function(e) {
         scrollTop: $("#contenedorProductos").offset().top  
     }, 500);
 } );
+
 
 
  
