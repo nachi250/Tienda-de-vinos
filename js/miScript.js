@@ -147,7 +147,7 @@ const guardoCarrito = () => {
 function eliminarLS(id) { 
     let p = carrito.findIndex(p => p.productoId == id)
     carrito.splice(p, 1)
-    console.warn('¡Se eliminó '+p)
+    console.warn('¡Se eliminó el producto')
     guardoCarrito()
 }
 
